@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  database:
+    container_name: database
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    networks:
+      - server
+    environment:
+      TZ: "Africa/Casablanca"
+    env_file:
+      - ./docker/database/.env.local
+    restart: unless-stopped
+  server:
+    container_name: server
+    image: server:1337
+    build:
+      context: ./docker/server
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      - server
+    volumes:
+      - ./server:/app
+    env_file:
+      - ./docker/server/.env.local
+    restart: unless-stopped
+    depends_on:
+      - database
+
+networks:
+  server:
+    driver: bridge
