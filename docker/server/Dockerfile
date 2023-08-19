@@ -13,6 +13,6 @@ WORKDIR     /app
 
 RUN         npm install -g @nestjs/cli
 
-EXPOSE      8080
+EXPOSE      3000
 
 ENTRYPOINT  [ "/bin/sh", "-c", "npm install && npm run start:dev" ]
