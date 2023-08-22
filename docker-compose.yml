@@ -8,6 +8,8 @@ services:
       - 5432:5432
     networks:
       - server
+    volumes:
+      - data:/var/lib/postgresql/data
     environment:
       TZ: "Africa/Casablanca"
     env_file:
@@ -34,3 +36,12 @@ services:
 networks:
   server:
     driver: bridge
+
+volumes:
+  data:
+    name: data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/goinfre/data
