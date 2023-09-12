@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket playground</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Socket playground</h1>
+      <div>
+        <h3>messages</h3>
+        <ul id="messages"></ul>
+      </div>
+      <div>
+        <input type="text" id="input" autocomplete="off" />
+        <button onclick="handleSubmit()">Submit</button>
+      </div>
+      <div>
+        <h3>users</h3>
+        <ul id="users"></ul>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
