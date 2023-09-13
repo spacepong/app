@@ -1,4 +1,11 @@
-const socket = io("http://localhost:3000");
+const socket = io("http://localhost:3000", {
+  auth: {
+    authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwOGNmNDNiNS0yMjBjLTRkYmQtYmFhZC1iNGJmNzUzZDlmZTgiLCJpbnRyYTQyQWNjZXNzVG9rZW4iOiI5ZTVmYTU1OWU1NjhiNmI3OGRkMDA0N2M4MTkxZGJhOTRhZWQ2N2NmMmIwZDE3NDRhM2YxMjIyZWJjYmE2NTA1IiwiaXMyZmFFbmFibGVkIjpmYWxzZSwiaXMyZmFBdXRoZW50aWNhdGVkIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjkzNDc3OTU5fQ.26fm-mdqe2XadyJG92OVWPIwmpYyzEy7guwCrjBdGxQ",
+  },
+});
+
+console.log(socket);
 
 const input = document.getElementById("input");
 const messages = document.getElementById("messages");
