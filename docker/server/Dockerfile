@@ -15,4 +15,4 @@ RUN         npm install -g @nestjs/cli
 
 EXPOSE      3000
 
-ENTRYPOINT  [ "/bin/sh", "-c", "npm install && npm run start:dev" ]
+ENTRYPOINT  [ "/bin/sh", "-c", "npx prisma migrate dev && npm install && npm run start:dev" ]
