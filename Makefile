@@ -2,7 +2,7 @@ all		:	run
 
 .PHONY	:	run
 run		:
-			@mkdir -p ~/goinfre/data
+			@mkdir -p ~/tmp/data
 			@sh ./scripts/run.sh
 
 .PHONY	:	clean
